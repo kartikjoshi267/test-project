@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Reports</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="reportsStyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <div class="heading">
+        <h1>Detailed Test Report</h1>
+    </div>
+    <div>
+      <canvas id="myChart" style="width:100%;max-width:600px; display: flex; margin-left: 350px; margin-top: 100px;"></canvas>
+    </div>
+    <div>
+        <table class="table table-success table-striped-columns table-success" id="myTable">
+            <tr class="table-success">
+                <th>Test Name</th>
+                <th colspan="6">Failing Since</th>               
+            </tr>
+            <tr class="table-danger">
+                <td>Test 1</td>
+                <td>28/05/2023</td>
+            </tr>
+            <tr class="table-danger">
+                <td>Test 2</td>
+                <td>28/05/2023</td>
+            </tr>
+            <tr class="table-danger">
+                <td>Test 4</td>
+                <td>30/05/2023</td>
+            </tr>
+            <tr class="table-danger">
+                <td>Test 8</td>
+                <td>31/05/2023</td>
+            </tr>
+            <tr class="table-danger">
+                <td>Test 12</td>
+                <td>29/05/2023</td>
+            </tr>
+        </table>    
+    </div>
+
+    
+<script>
+var xValues = ["Passes", "Failed"];
+var yValues = [15, 5];
+var barColors = [
+  "rgb(95, 243, 15)",
+  "#E21818",
+];
+
+new Chart("myChart", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Total Tests"
+      
+    }
+  }
+});
+</script>
+    </div>
+   
+
+    
+</body>
+</html>
