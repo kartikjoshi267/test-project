@@ -1,63 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- ...Your head content... -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing Report Dashboard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+  <!-- ...Your head content... -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing Report Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
 
-    <style>
-      body{
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-    background-color: #f5bf0e;
-}
-h1 {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Work Sans;
-}  
-.heading{
-    background-color: #4C4C6D;
-    color: aliceblue;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 100%;
-    margin-left: 0px;
-    position: fixed;
-    right: 0;
-    top: 0;
-}
-.date-column td:nth-child(n) {
-    background-color: red;
-  }
-  
-.date{
-    margin-top: 10px;
-    padding-top: 10px;
-    display: absolute;
-}
-    </style>
+  <style>
+    body {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-right: 0px;
+      margin-left: 0px;
+      background-color: #f5bf0e;
+    }
+
+    h1 {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Work Sans;
+    }
+
+    .heading {
+      background-color: #4C4C6D;
+      color: aliceblue;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 100%;
+      margin-left: 0px;
+      position: fixed;
+      right: 0;
+      top: 0;
+    }
+
+    .date-column td:nth-child(n) {
+      background-color: red;
+    }
+
+    .date {
+      margin-top: 10px;
+      padding-top: 10px;
+      display: absolute;
+    }
+  </style>
 </head>
+
 <body class="bg-$indigo-100">
-    <!-- ...Your header and date input section... -->
-    <div class="heading">
-      <h1>Daily Regression Report</h1>
+  <!-- ...Your header and date input section... -->
+  <div class="heading">
+    <h1>Daily Regression Report</h1>
   </div>
   <!-- for spacing -->
-  <div class="date"> 
+  <div class="date">
     <button type="submit"></button>
     <label for="startDate">Start Date:</label>
     <input type="date" id="startDate">
@@ -67,7 +75,7 @@ h1 {
 
     <button class="bg-warning">Enter JSON file</button>
   </div>
-  
+
   <!-- main date div -->
   <div class="date mt-lg-5 pt-4" style="margin-left: 20px; ">
     <label for="startDate" style="color: rgb(0, 4, 8);">Start Date:</label>
@@ -87,89 +95,91 @@ h1 {
   <div class="content pt-lg-3">
     <table class="table table-success table-striped-columns table-primary" id="myTable">
       <tr class="table-secondary">
-        <th >Date</th>
-        <% for (var i = 1; i <= 10; i++) { %>
-          <th colspan="4" class="table-info">Suite <%= i %></th>
-        <% } %>
+        <th>Date</th>
+        <% for (var i=1; i <=10; i++) { %>
+          <th colspan="4" class="table-info">Suite <%= i %>
+          </th>
+          <% } %>
       </tr>
       <tr class="table-primary">
         <th style="background-color: #e0ccf2;"></th>
-        <% for (var i = 1; i <= 10; i++) { %>
+        <% for (var i=1; i <=10; i++) { %>
           <th class="table-info">Tests</th>
           <th style="background-color: #9bf293;">Pass</th>
-          <th class="table-danger">Fail</th> 
+          <th class="table-danger">Fail</th>
           <th style="background-color: #f3d283;">Fail List</th>
-        <% } %>
+          <% } %>
       </tr>
-      <% let prevDate = null; %>
-      <% data.forEach((item) => { %>
-        <% if (item.Date !== prevDate) { %>
-          <tr style="background-color: #e0ccf2;">
-            <td class="table-secondary" style="background-color: #e0ccf2;"><%= item.date %></td>
-            <% for (var i = 1; i <= 10; i++) { %>
-              <% var suiteKey = 'Suite_' + i; %>
-              <% var suite = item[suiteKey]; %>
-              <% if (suite) { %>
-                <td class="table-info"><%= suite.Tests || '' %></td>
-                <td style="background-color: #9bf293;"><%= suite.Pass || '' %></td>
-                <td class="table-danger"><%= suite.Fail || '' %></td>
-                <td style="background-color: #f3d283;">
-                  <% if (Array.isArray(suite.Fail_list) && suite.Fail_list.length > 0) { %>
-                    <%= suite.Fail_list.filter(Boolean).join(', ') %>
-                  <% } %>
-                </td>
-              <% } else { %>
-                <td class="table-info"></td>
-                <td style="background-color: #9bf293;"></td>
-                <td class="table-danger"></td>
-                <td style="background-color: #f3d283;"></td>
-              <% } %>
-            <% } %>
-          </tr>
-        <% } %>
-        <% prevDate = item.Date; %>
-      <% }) %>
-      
-    </table>
-</div>
 
-    <!-- ...Your scripts... -->
-    <script src="server.js">
-      window.addEventListener('DOMContentLoaded', function() {
-    var startDateInput = document.getElementById('startDate');
-    var endDateInput = document.getElementById('endDate');
-    var submitButton = document.getElementById('submitBtn');
-    var resetButton = document.getElementById('resetBtn');
-    
-    // Set default date range
-    var today = new Date().toISOString().slice(0, 10);
-    endDateInput.value = today;
-    var oneMonthAgo = new Date();
-    oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
-    startDateInput.value = oneMonthAgo.toISOString().slice(0, 10);
-    
-    // Update end date minimum value when start date changes
-    startDateInput.addEventListener('change', function() {
+      <% var keys = Object.keys(data); %>
+      <% for (let i = 0; i < keys.length; i++) { %>
+        <% var arr = data[keys[i]]; %>
+        <tr>
+          <td><%= keys[i] %></td>
+          <% for (let j = 1; j <= 10; j++) { %>
+            <% const item = arr.find(item => item['Suite_No'] === j); %>
+            <% if (item !== undefined) { %>
+              <td class="table-info"><%= item['Tests'] %></td>
+              <td style="background-color: #9bf293;"><%= item['Pass'] %></td>
+              <td class="table-danger"><%= item['Fail'] %></td>
+              <td style="background-color: #f3d283;">
+                <a href="/reportsPage/<%= item._id %>" class="btn btn-outline-danger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                  </svg>
+                </a>
+              </td>
+            <% } else { %>
+              <td class="table-info"></td>
+              <td style="background-color: #9bf293;"></td>
+              <td class="table-danger"></td>
+              <td style="background-color: #f3d283;"></td>
+            <% } %>
+          <% } %>
+        </tr>
+      <% } %>
+    </table>
+  </div>
+
+  <!-- ...Your scripts... -->
+  <script src="server.js">
+    window.addEventListener('DOMContentLoaded', function () {
+      var startDateInput = document.getElementById('startDate');
+      var endDateInput = document.getElementById('endDate');
+      var submitButton = document.getElementById('submitBtn');
+      var resetButton = document.getElementById('resetBtn');
+
+      // Set default date range
+      var today = new Date().toISOString().slice(0, 10);
+      endDateInput.value = today;
+      var oneMonthAgo = new Date();
+      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+      startDateInput.value = oneMonthAgo.toISOString().slice(0, 10);
+
+      // Update end date minimum value when start date changes
+      startDateInput.addEventListener('change', function () {
         endDateInput.setAttribute('min', startDateInput.value);
-    });
-    
-    // Submit button event listener
-    submitButton.addEventListener('click', function() {
+      });
+
+      // Submit button event listener
+      submitButton.addEventListener('click', function () {
         var startDate = startDateInput.value;
         var endDate = endDateInput.value;
         // Perform logic to display results in the specified date range
         // ...
         console.log('Results for date range:', startDate, 'to', endDate);
-    });
-    
-    // Reset button event listener
-    resetButton.addEventListener('click', function() {
+      });
+
+      // Reset button event listener
+      resetButton.addEventListener('click', function () {
         startDateInput.value = '';
         endDateInput.value = '';
-    });
+      });
 
-    
-});
-</script>
+
+    });
+  </script>
 </body>
+
 </html>

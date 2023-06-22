@@ -66,7 +66,24 @@ const documents = jsonData.map((doc) => {
 app.get('/', (req, res) => {
   TestResult.find({})
     .then((data) => {
-      res.render('index', { data: data });
+      let processData = {}
+      data.map((item)=>{
+        if (item['date'] in processData === false){
+          processData[item['date']] = [item];
+        } else {
+          processData[item['date']].push(item);
+        }
+      });
+
+      let keys = Object.keys(processData);
+      keys.sort((a,b) => new Date(b).getTime() - new Date(a).getTime());
+      let tempObj = {};
+      for (let i = 0; i < keys.length; i++){
+        tempObj[keys[i]] = processData[keys[i]];
+      }
+      processData = tempObj;
+
+      res.render('index', { data: processData });
       // console.log(res.status);
     })
     .catch((err) => {
@@ -75,6 +92,12 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/reportsPage/:id', async (req, res) => {
+  const id = req.params.id;
+  const docs = await TestResult.findById(id).exec();
+  res.render('reportsPage', { data: docs });
+  // res.status(500).send('Error retrieving data from mongoose');
+})
 
 
 
