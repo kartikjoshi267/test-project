@@ -19,12 +19,10 @@
           <tbody>
             <tr>
               <th>Test Name</th>
-              <th>Failing Since</th>
             </tr>
             <% data['Fail_list'].map((fail) => { %>
               <tr class="table-danger">
                 <td><%= fail %></td>
-                <td></td>
               </tr>
             <% }) %>
           </tbody>
